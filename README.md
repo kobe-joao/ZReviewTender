@@ -16,7 +16,7 @@ ZReviewTender is a tool for fetching app reviews from the App Store and Google P
 - [x] Provides a lightweight implementation that only logs the latest review timestamp, rather than saving all reviews in local storage
 - [x] Supports filtering, allowing you to add custom filter conditions to filter out the reviews you don't need
 - [x] Based on official APIs (AndroidpublisherV3 and the brand new AppStoreConnect API), eliminating the need for workarounds or dealing with session expired problems
-- [x] Quickly deployable with the Github Repo Template/Github Action
+- [x] Quickly deployable with the GitHub Repo Template/GitHub Action
 - [x] 100% Ruby@RubyGem
 
 # Result
@@ -36,14 +36,14 @@ ZReviewTender is a tool for fetching app reviews from the App Store and Google P
 | Reply to reviews                     | ❌                            | ✅                | ❌                                | ❌ (not available for small plan) | ❌ (not available for free plan) | ✅              |
 | Reviews Analytics or Reporting       | ❌                            | ❌                | ❌ (not available for basic plan) | ✅                                | ✅                               | ✅              |
 
-# Setup - Only need Default Proceesor(Slack/Filter/Google Translate)
+# Setup - Only need Default Processor(Slack/Filter/Google Translate)
 
 ## Strongly Recommended
 
 [![image](https://user-images.githubusercontent.com/33706588/184472064-1cd36b40-9e6f-481a-bce3-164dfb379771.png)](https://github.com/ZhgChgLi/ZReviewTender-deploy-with-github-action)
 
 
-[Deploy with Gitub Repo Template](https://github.com/ZhgChgLi/ZReviewTender-deploy-with-github-action) 🚀🚀🚀
+[Deploy with GitHub Repo Template](https://github.com/ZhgChgLi/ZReviewTender-deploy-with-github-action) 🚀🚀🚀
 
 - no need host/server ✅
 - no need environment requirement ✅
@@ -51,7 +51,7 @@ ZReviewTender is a tool for fetching app reviews from the App Store and Google P
 - only need configuration ✅
 - total free ✅
 
-Github Action Proivde 2,000+ mins/month for free.
+GitHub Action Provide 2,000+ mins/month for free.
 ZReviewTender will cost ~= 30s per time, default run every 6 hours will cost 4 times/day * 30s/per time * 30days = 60 mins/month
 
 ⚠️️️️️ MUST CREATE PRIVATE REPO, TO KEEP YOUR CREDENTIAL FILES SAFE. ⚠️️️️️
@@ -66,7 +66,7 @@ ZReviewTender will cost ~= 30s per time, default run every 6 hours will cost 4 t
 1. MacOS comes with a System Ruby pre-installed, but we are **NOT** Recommend to use that, using rvm/rbenv's Ruby instead.
 2. install [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/) to manage Ruby environment
 3. install Ruby through rbenv/rym (you can install ruby version `2.6.X`)
-4. change the systme ruby to rbenv/rvm's Ruby
+4. change the system ruby to rbenv/rvm's Ruby
 5. type `which ruby` in terminal to make sure current Ruby is **NOT** `/usr/bin/ruby`
 6. type `gem install ZReviewTender` in terminal
 
@@ -105,7 +105,7 @@ Create a new API Key:
 ![1_DvjiO3IkHEiPXp0M_dnnww](https://user-images.githubusercontent.com/33706588/183832422-32d5a41b-6f2e-4395-858d-258afe657b51.png)
 
 - appStoreConnectP8PrivateKeyID: `Key ID`
-- appStoreConnectP8PrivateKeyFilePath: `/AuthKey_XXXXXXXXXX.p8`, Download API Key and placed it to /config/ folder (releated path with config yml file)
+- appStoreConnectP8PrivateKeyFilePath: `/AuthKey_XXXXXXXXXX.p8`, Download API Key and placed it to /config/ folder (related path with config yml file)
 
 **appID:**
 
@@ -117,7 +117,7 @@ appID: [App Store Connect](https://appstoreconnect.apple.com/apps) -> App Store 
 
 ## Use Authenticating as a service accountAuthenticating as a service account for Google Releated Service
 
-- follow the steps of [Creating a service account](https://cloud.google.com/docs/authentication/production#create_service_account) in offcial documentation, to create a service account of GCP and download the **GCP JSON Private Key**.
+- follow the steps of [Creating a service account](https://cloud.google.com/docs/authentication/production#create_service_account) in official documentation, to create a service account of GCP and download the **GCP JSON Private Key**.
 - make sure the service account have the right access you need (e.g. Google Translate/Google Ancdroid Publisher API/Google Sheet...)
 
 ## Google Play Console (Android App)
@@ -147,7 +147,7 @@ Follow the [GCP Started Document](https://developers.google.com/android-publishe
 
 - make sure the service account have the right access
 
-keyFilePath: `/gcp_key.json` the key path of GCP JSON Private Key, placed it to /config/ folder (releated path with config yml file).
+keyFilePath: `/gcp_key.json` the key path of GCP JSON Private Key, placed it to /config/ folder (related path with config yml file).
 
 ## Default Processor
 ### FilterProcessor
@@ -160,7 +160,7 @@ keyFilePath: `/gcp_key.json` the key path of GCP JSON Private Key, placed it to 
 ### GoogleTranslateProcessor
 - class: `GoogleTranslateProcessor`, no need to chane, it's point to lib/Processors/`GoogleTranslateProcessor`.rb
 - enable: true/false enable this Processor or Not
-- googleTranslateAPIKeyFilePath: `/gcp_key.json` Google Translate GCP Service Account JSON Private Key File Path `*.json`,placed it to /config/ folder (releated path with config yml file)
+- googleTranslateAPIKeyFilePath: `/gcp_key.json` Google Translate GCP Service Account JSON Private Key File Path `*.json`,placed it to /config/ folder (related path with config yml file)
 - make sure the service account have the right access(Google Translate API)
 - googleTranslateTargetLang: `zh-TW` Target translated language
 - googleTranslateTerritoriesExclude: ["zh-hant","TWN"…] (Territor(TWN/JPN...) for Apple or Language(zh-hant,en...) For Android review that didn't need to translate.
@@ -169,7 +169,7 @@ keyFilePath: `/gcp_key.json` the key path of GCP JSON Private Key, placed it to 
 - class: `SlackProcessor`, no need to chane, it's point to lib/Processors/`SlackProcessor`.rb
 - enable: true/false enable this Processor or Not
 - slackTimeZoneOffset: `+08:00` timezone of display review created time
-- slackAttachmentGroupByNumber: `1` specify how many Reviews will group by in same Slack Message (in Attacment)
+- slackAttachmentGroupByNumber: `1` specify how many Reviews will group by in same Slack Message (in Attachment)
 - slackBotToken: `xoxb-xxxx-xxxx-xxxx` [Slack Bot](https://slack.com/help/articles/115005265703-Create-a-bot-for-your-workspace) Token
 - slackBotTargetChannel: `CXXXXXX` Channel ID (Not Channel Name), and you need to add Slack Bot to this Channel
 - slackInCommingWebHookURL: `https://hooks.slack.com/services/XXXXX` the old send message to slack way, will deprecated.
@@ -185,7 +185,7 @@ ZReviewTender will use slackBotToken by default.
 ### GoogleSheetProcessor
 - class: `GoogleSheetProcessor`, no need to chane, it's point to lib/Processors/`GoogleSheetProcessor`.rb
 - enable: true/false enable this Processor or Not
-- googleSheetAPIKeyFilePath: `/gcp_key.json` Google Sheet GCP Service Account JSON Private Key File Path `*.json`,placed it to /config/ folder (releated path with config yml file)
+- googleSheetAPIKeyFilePath: `/gcp_key.json` Google Sheet GCP Service Account JSON Private Key File Path `*.json`,placed it to /config/ folder (related path with config yml file)
 - make sure the service account have the right access(Google Translate API)
 - googleSheetTimeZoneOffset: `+08:00` timezone of display review created time
 - googleSheetInsertStyle.type: "append" # Google Sheet Insert type, append or insert
@@ -213,7 +213,7 @@ ZReviewTender will use slackBotToken by default.
 
 ### Custom Processor
 1. Clone this repo project (due to ZReviewTedner is a completely Gem, you can't modify it dynamically)
-2. Reference [Processor.rb](https://github.com/ZhgChgLi/ZReviewTender/blob/main/lib/Processors/ProcessorTemplate.rb), make a copy and devlop the feature you want
+2. Reference [Processor.rb](https://github.com/ZhgChgLi/ZReviewTender/blob/main/lib/Processors/ProcessorTemplate.rb), make a copy and develop the feature you want
 
 `initialize`
 - `config`: config yml parameter
@@ -305,19 +305,19 @@ you will received an init success message in your Slack Channel!
 
 ![1_U8vjWSHvY2RzUBcUbQoBvQ](https://user-images.githubusercontent.com/33706588/183839283-bd836917-f4a9-467e-97ff-238d947c2fad.png)
 
-ZReviewTender will also created latestCheckTimestamp/Apple, latestCheckTimestamp/Android to log ZReviewTender latest checked Review Timestamp and created execute.log for log excute error.
+ZReviewTender will also created latestCheckTimestamp/Apple, latestCheckTimestamp/Android to log ZReviewTender latest checked Review Timestamp and created execute.log for log execute error.
 
 ![image](https://user-images.githubusercontent.com/33706588/184472442-3bc390d2-c4c0-4eec-8dc2-f8061124e870.png)
 
 
-## Setup a crontab schedule job to excute(Check latest Review & Process) periodicity
+## Setup a crontab schedule job to execute(Check latest Review & Process) periodicity
 - You could use crontab or any schedule service to execute ZReviewTender periodicity
 - e.g. in crontab: `15 */6 * * * ZReviewTender -r`
 - please note that, google api only allow retrieve the reviews that users have created or modified within the last week, so could not set the time period more than one week.
 
 [![image](https://user-images.githubusercontent.com/33706588/185638179-39d9fc09-e0c7-4164-864a-0f13e1b7df3f.png)](https://github.com/marketplace/actions/zreviewtender-app-reviews-automatic-bot)
 
-## Github Action
+## GitHub Action
 ![image](https://user-images.githubusercontent.com/33706588/185739638-25f145b8-e2a8-4146-9b4d-688c7ddc75ac.png)
 
 [ZReviewTender App Reviews Automatic Bot](https://github.com/marketplace/actions/zreviewtender-app-reviews-automatic-bot)
@@ -372,7 +372,7 @@ This repository is for research purposes only, the use of this code is your resp
 
 # Donate
 
-[![Buy Me A Coffe](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20beer!&emoji=%F0%9F%8D%BA&slug=zhgchgli&button_colour=FFDD00&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/zhgchgli)
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20beer!&emoji=%F0%9F%8D%BA&slug=zhgchgli&button_colour=FFDD00&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/zhgchgli)
 
 If you find this library helpful, please consider starring the repo or recommending it to your friends.
 
